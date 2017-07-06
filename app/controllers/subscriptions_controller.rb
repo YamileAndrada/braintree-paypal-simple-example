@@ -18,7 +18,7 @@ class SubscriptionsController < ApplicationController
 
     result = Braintree::Subscription.create(
       payment_method_token: customer.payment_methods.find{ |pm| pm.default? }.token,
-      plan_id: params[:plan_id]
+      plan_id: 'mb2w'
     )
     current_user.update(braintree_subscription_id: result.subscription.id)
 

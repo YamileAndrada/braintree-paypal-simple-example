@@ -5,6 +5,8 @@ class EpisodesController < ApplicationController
   # GET /episodes.json
   def index
     @episodes = Episode.all
+    current_user.update(braintree_subscription_id: nil)
+   # current_user.update(braintree_id: nil)
   end
 
   # GET /episodes/1

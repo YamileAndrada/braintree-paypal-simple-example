@@ -8,7 +8,7 @@
 
 <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
 <script>
-var clientToken = "<%= Braintree::ClientToken.generate %>";
+var clientToken = "<%= Braintree::ClientToken.generate( :customer_id => '874584921') %>";
 
 braintree.setup(clientToken, "dropin", {
   container: "payment-form",
